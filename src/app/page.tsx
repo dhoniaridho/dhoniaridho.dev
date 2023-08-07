@@ -32,9 +32,13 @@ export default function Home() {
           </div>
         </nav>
         <div className="text-8xl font-righteous max-w-screen-xl mx-auto z-1 py-20 font-bold tracking-wide space-y-3">
-          <div>
+          <div className="relative">
             <span className="text-[#ffbe3d]">PASSIONATE</span> TO CRAFT AMAZING
             WEBSITES.
+            <div className="bg-[#fa5999] text-6xl absolute w-28 h-28 rounded-full z-20 flex justify-center flex-col items-center -left-16 -top-16">
+              <span>3+</span>
+              <span className="text-sm font-bebas-neue">YEARS</span>
+            </div>
           </div>
           <div>
             <span className="text-[#5ac1ed]">BUILDING</span> DYNAMIC AND
@@ -422,6 +426,15 @@ export default function Home() {
               }
             ></AccordionItem>
           </Accordion>
+        </div>
+        <div className="mt-20">
+          <Card className="bg-[#4e27b0] text-white m-5 overflow-hidden">
+            <div className="font-righteous text-7xl py-32 max-w-screen-xl mx-auto z-10 leading-snug">
+              WE ARE COMMITTED TO HELPING OUR CLIENTS SUCCEED AND GROW.
+            </div>
+            <div className="w-72 h-72 rounded-xl bg-[#a293ff]/30 absolute bottom-0 rotate-12 scale-125 z-0" />
+            <div className="w-72 h-72 rounded-xl bg-[#6c57f1]/30 absolute top-0 right-0 -rotate-12 scale-125 z-0" />
+          </Card>
         </div>
         <div className="max-w-screen-xl mx-auto mt-20 space-y-10">
           <div className="text-2xl font-righteous">
