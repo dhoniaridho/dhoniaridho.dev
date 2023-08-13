@@ -31,11 +31,11 @@ export default function Home() {
             </Button>
           </div>
         </nav>
-        <div className="text-8xl font-righteous max-w-screen-xl mx-auto z-1 py-20 font-bold tracking-wide space-y-3">
+        <div className="text-5xl md:text-8xl font-righteous max-w-screen-xl mx-auto z-1 py-20 font-bold tracking-wide space-y-3 p-5">
           <div className="relative">
             <span className="text-[#ffbe3d]">PASSIONATE</span> TO CRAFT AMAZING
             WEBSITES.
-            <div className="absolute w-28 h-28 rounded-full z-20 -left-20 -top-2">
+            <div className="absolute w-28 h-28 rounded-full z-20 -left-20 -top-2 hidden md:block">
               <div className="text-6xl z-20 relative flex justify-center items-center">
                 <div className="absolute w-28 h-28 rounded-full bg-[#fa5999] z-10 flex justify-center flex-col items-center">
                   <span>3+</span>
@@ -80,7 +80,7 @@ export default function Home() {
             <span className="text-[#ffbe3d]">TECHNOLOGY</span>.
           </div>
         </div>
-        <div className="bg-[#fa5999] opacity-50 w-full uppercase text-8xl font-righteous rotate-6 absolute bottom-0 scale-105">
+        <div className="bg-[#fa5999] opacity-50 w-full uppercase text-3xl md:text-8xl font-righteous rotate-6 absolute bottom-0 scale-105">
           <div className=" whitespace-nowrap overflow-hidden space-x-20">
             <span>LETS TALK</span>
             <span>hi@dhoniaridho.com</span>
@@ -89,7 +89,7 @@ export default function Home() {
           </div>
         </div>
         <svg
-          className="z-30 absolute right-20 top-28"
+          className="z-30 absolute right-20 top-28 hidden md:block"
           xmlns="http://www.w3.org/2000/svg"
           width="212"
           height="212"
@@ -209,7 +209,7 @@ export default function Home() {
             </clipPath>
           </defs>
         </svg>
-        <div className="bg-[#fa5999] opacity-50 w-full uppercase text-8xl font-righteous -rotate-6 absolute bottom-10">
+        <div className="bg-[#fa5999] opacity-50 w-full uppercase text-3xl md:text-8xl font-righteous -rotate-6 absolute bottom-10">
           <div className=" whitespace-nowrap overflow-hidden space-x-20">
             <span>LETS TALK</span>
             <a
@@ -229,7 +229,7 @@ export default function Home() {
             </a>
           </div>
         </div>
-        <div className="bg-[#fa5999] w-full uppercase text-8xl font-righteous absolute bottom-0 z-0">
+        <div className="bg-[#fa5999] w-full uppercase text-3xl md:text-8xl font-righteous absolute bottom-0 z-0">
           <div className=" whitespace-nowrap overflow-hidden space-x-20">
             <span>LETS TALK</span>
             <a
@@ -252,18 +252,18 @@ export default function Home() {
       </section>
       <section className="min-h-screen bg-black text-white py-28">
         <div className="space-y-16">
-          <div className="text-6xl font-righteous max-w-screen-xl mx-auto">
+          <div className="text-4xl md:text-6xl font-righteous max-w-screen-xl mx-auto">
             <div className="max-w-3xl">
               WE ARE THE EXPERTS, LET US OUR SHOW YOU OUR{" "}
               <span className="text-[#ffbe3d]">EXPERTISE</span>
             </div>
           </div>
           <div className="mt-20 border-t border-b border-white/50">
-            <ul className="grid grid-cols-2 py-5 gap-10 max-w-screen-xl mx-auto">
+            <ul className="grid grid-cols-1 md:grid-cols-2 py-5 gap-10 max-w-screen-xl mx-auto">
               {keys.map((key) => (
                 <li
                   key={key}
-                  className="odd:border-r border-white/50 px-10 py-5"
+                  className="md:odd:border-r border-white/50 md:px-10 py-5"
                 >
                   <div className="flex gap-5">
                     <svg
@@ -298,7 +298,7 @@ export default function Home() {
           </div>
           <div className=" max-w-screen-xl mx-auto">
             <div className="max-w-3xl">
-              <div className="text-6xl font-righteous">
+              <div className="text-4xl md:text-6xl font-righteous">
                 WE ARE CREATE &<span className="text-[#ffbe3d]"> INNOVATE</span>
               </div>
               <span className="text-xs mt-5">
@@ -310,7 +310,7 @@ export default function Home() {
           <div className="space-y-3 max-w-screen-xl mx-auto">
             <Tabs aria-label="Options">
               <Tab key="photos" title="Front End">
-                <div className="flex space-x-5">
+                <div className="md:flex gap-5 space-y-5 p-3">
                   {Array.from({ length: 4 }).map((_, index) => (
                     <Card
                       role="button"
@@ -318,11 +318,15 @@ export default function Home() {
                       isHoverable
                       isFooterBlurred
                       radius="lg"
-                      className="w-fit"
+                      className="md:w-fit"
                     >
-                      <div className="border-none  relative">
+                      <div className="border-none relative w-full">
                         <Image
                           isZoomed
+                          className="w-full max-w-full"
+                          classNames={{
+                            wrapper: "!max-w-full",
+                          }}
                           alt="Woman listing to music"
                           src="https://nextui-docs-v2.vercel.app/images/album-cover.png"
                         />
@@ -371,7 +375,7 @@ export default function Home() {
       </section>
       <section className="min-h-screen bg-black text-white py-16 relative">
         <div className="space-y-20 max-w-screen-xl mx-auto">
-          <div className="text-6xl font-righteous">
+          <div className="text-4xl md:text-6xl font-righteous">
             <div className="max-w-3xl">
               BEST <span className="text-[#ffbe3d]"> SERVICES</span>, RIGHT
               TIME, RIGHT PEOPLE{" "}
@@ -383,7 +387,7 @@ export default function Home() {
               aria-label="Understanding Brief"
               title="Understanding Brief"
               classNames={{
-                title: "text-4xl font-bebas-neue",
+                title: "text-2xl md:text-4xl font-bebas-neue",
               }}
               indicator={<Button isIconOnly>+</Button>}
               subtitle={
@@ -417,7 +421,7 @@ export default function Home() {
               aria-label="BRANDSTORMING 8 RESEARCH"
               title="BRANDSTORMING 8 RESEARCH"
               classNames={{
-                title: "text-4xl font-bebas-neue",
+                title: "text-2xl md:text-4xl font-bebas-neue",
               }}
               indicator={<Button isIconOnly>+</Button>}
               subtitle={
@@ -451,7 +455,7 @@ export default function Home() {
               aria-label="DESIGN PROCESS"
               title="DESIGN PROCESS"
               classNames={{
-                title: "text-4xl font-bebas-neue",
+                title: "text-2xl md:text-4xl font-bebas-neue",
               }}
               indicator={<Button isIconOnly>+</Button>}
               subtitle={
@@ -485,7 +489,7 @@ export default function Home() {
               aria-label="DEVELOPMENT PROCESS"
               title="DEVELOPMENT PROCESS"
               classNames={{
-                title: "text-4xl font-bebas-neue",
+                title: "text-2xl md:text-4xl font-bebas-neue",
               }}
               indicator={<Button isIconOnly>+</Button>}
               subtitle={
@@ -519,7 +523,7 @@ export default function Home() {
               aria-label="DELIVER & PAYMENT"
               title="DELIVER & PAYMENT"
               classNames={{
-                title: "text-4xl font-bebas-neue",
+                title: "text-2xl md:text-4xl font-bebas-neue",
               }}
               indicator={<Button isIconOnly>+</Button>}
               subtitle={
@@ -553,7 +557,7 @@ export default function Home() {
               aria-label="DEPLOY"
               title="DEPLOY"
               classNames={{
-                title: "text-4xl font-bebas-neue",
+                title: "text-2xl md:text-4xl font-bebas-neue",
               }}
               indicator={<Button isIconOnly>+</Button>}
               subtitle={
@@ -583,7 +587,7 @@ export default function Home() {
         </div>
         <div className="mt-20">
           <Card className="bg-[#4e27b0] text-white m-5 overflow-hidden">
-            <div className="font-righteous text-7xl py-32 max-w-screen-xl mx-auto z-10 leading-snug">
+            <div className="p-4 font-righteous text-4xl md:text-7xl py-32 max-w-screen-xl mx-auto z-10 leading-snug">
               WE ARE COMMITTED TO HELPING OUR CLIENTS SUCCEED AND GROW.
             </div>
             <div className="w-72 h-72 rounded-xl bg-[#a293ff]/30 absolute bottom-0 rotate-12 scale-125 z-0" />
