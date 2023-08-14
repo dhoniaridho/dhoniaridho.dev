@@ -22,9 +22,9 @@ export default function RootLayout({
         <Providers>{children}</Providers>
         <footer className="border-t border-white/20">
           <div className="max-w-screen-xl mx-auto flex justify-between items-center h-20">
-            <div>dhoniaridho</div>
+            <div></div>
             <div className="font-righteous">dhoniaridho.</div>
-            <div>dhoniaridho</div>
+            <div></div>
           </div>
         </footer>
       </body>

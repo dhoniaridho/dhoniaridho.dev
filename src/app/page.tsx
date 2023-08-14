@@ -18,9 +18,9 @@ export default function Home() {
     <main className="overflow-x-hidden">
       <section className="bg-[#4e27b0] text-white min-h-screen h-screen relative">
         <nav className="top-0 border-b border-white/50 z-30">
-          <div className=" flex justify-between items-center max-w-screen-xl mx-auto h-20 ">
+          <div className=" flex justify-between items-center max-w-screen-xl mx-auto h-20 px-5 md:px-0">
             <h1 className="font-righteous text-2xl">DHONIARIDHO.</h1>
-            <ul className="flex gap-10 uppercase">
+            <ul className="hidden gap-10 uppercase md:flex">
               <li>Home</li>
               <li>About Us</li>
               <li>Our Works</li>
@@ -250,7 +250,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="min-h-screen bg-black text-white py-28">
+      <section className="min-h-screen bg-black text-white py-28 p-5 md:p-0">
         <div className="space-y-16">
           <div className="text-4xl md:text-6xl font-righteous max-w-screen-xl mx-auto">
             <div className="max-w-3xl">
@@ -373,7 +373,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="min-h-screen bg-black text-white py-16 relative">
+      <section className="min-h-screen bg-black text-white py-16 relative p-5 md:p-0">
         <div className="space-y-20 max-w-screen-xl mx-auto">
           <div className="text-4xl md:text-6xl font-righteous">
             <div className="max-w-3xl">
