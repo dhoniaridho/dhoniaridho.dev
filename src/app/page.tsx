@@ -4,12 +4,29 @@ import {
   AccordionItem,
   Button,
   Card,
-  CardBody,
-  CardFooter,
   Image,
   Tab,
   Tabs,
 } from "@nextui-org/react";
+import { works } from "./works/works.fixture";
+
+const skills = [
+  {
+    title: "Front-End Development",
+    subTitle:
+      "Front-end web development is the development of the graphical user interface of a website, through the use of HTML, CSS, and JavaScript, so that users can view and interact with that website.",
+  },
+  {
+    title: "Backend-End Development",
+    subTitle:
+      "Backend developers build code that allows a database and an application to communicate with one another. Backend developers take care and maintain the back-end of a website, Including databases, servers, and apps, and they control what you don t see.",
+  },
+  {
+    title: "Full-Stack Development",
+    subTitle:
+      "Backend developers build code that allows a database and an application to communicate with one another. Backend developers take care and maintain the back-end of a website, Including databases, servers, and apps, and they control what you don t see.",
+  },
+];
 
 export default function Home() {
   const keys = ["Back-End", "Front-End", "Full-Stack", "UI/UX"];
@@ -17,20 +34,6 @@ export default function Home() {
   return (
     <main className="overflow-x-hidden">
       <section className="bg-[#4e27b0] text-white min-h-screen h-screen relative">
-        <nav className="top-0 border-b border-white/50 z-30">
-          <div className=" flex justify-between items-center max-w-screen-xl mx-auto h-20 px-5 md:px-0">
-            <h1 className="font-righteous text-2xl">DHONIARIDHO.</h1>
-            <ul className="hidden gap-10 uppercase md:flex">
-              <li>Home</li>
-              <li>About Us</li>
-              <li>Our Works</li>
-              <li>Service</li>
-            </ul>
-            <Button variant="bordered" color="secondary" className="text-white">
-              Contact Us
-            </Button>
-          </div>
-        </nav>
         <div className="text-5xl md:text-8xl font-righteous max-w-screen-xl mx-auto z-1 py-20 font-bold tracking-wide space-y-3 p-5">
           <div className="relative">
             <span className="text-[#ffbe3d]">PASSIONATE</span> TO CRAFT AMAZING
@@ -250,7 +253,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="min-h-screen bg-black text-white py-28 p-5 md:p-0">
+      <section className="min-h-screen bg-black text-white py-28 p-5 md:px-0">
         <div className="space-y-16">
           <div className="text-4xl md:text-6xl font-righteous max-w-screen-xl mx-auto">
             <div className="max-w-3xl">
@@ -259,11 +262,11 @@ export default function Home() {
             </div>
           </div>
           <div className="mt-20 border-t border-b border-white/50">
-            <ul className="grid grid-cols-1 md:grid-cols-2 py-5 gap-10 max-w-screen-xl mx-auto">
-              {keys.map((key) => (
+            <ul className="grid grid-cols-1 md:grid-cols-3 py-5 gap-10 max-w-screen-xl mx-auto">
+              {skills.map((skill) => (
                 <li
-                  key={key}
-                  className="md:odd:border-r border-white/50 md:px-10 py-5"
+                  key={skill.title}
+                  className="md:border-r last:border-none border-white/50 md:px-10 py-5"
                 >
                   <div className="flex gap-5">
                     <svg
@@ -281,15 +284,10 @@ export default function Home() {
                       ></path>
                     </svg>
                     <div>
-                      <div className="font-bebas-neue text-4xl mb-3">{key}</div>
-                      <p className="text-xs">
-                        Front-End Development with my skills involves using
-                        Vue.js to build engaging and user-friendly user
-                        interfaces for web applications. My expertise in Vue.js
-                        components, templates, and reactive data allows you to
-                        create dynamic and reactive interfaces that provide a
-                        seamless user experience.
-                      </p>
+                      <div className="font-bebas-neue text-4xl mb-3">
+                        {skill.title}
+                      </div>
+                      <p className="text-xs">{skill.subTitle}</p>
                     </div>
                   </div>
                 </li>
@@ -301,75 +299,35 @@ export default function Home() {
               <div className="text-4xl md:text-6xl font-righteous">
                 WE ARE CREATE &<span className="text-[#ffbe3d]"> INNOVATE</span>
               </div>
-              <span className="text-xs mt-5">
-                love clients ard wo Imo ttv•n seze opwtur*tB aryl find solutions
-                ideas and bJild them.
-              </span>
             </div>
           </div>
           <div className="space-y-3 max-w-screen-xl mx-auto">
-            <Tabs aria-label="Options">
-              <Tab key="photos" title="Front End">
-                <div className="md:flex gap-5 space-y-5 p-3">
-                  {Array.from({ length: 4 }).map((_, index) => (
-                    <Card
-                      role="button"
-                      key={index}
-                      isHoverable
-                      isFooterBlurred
-                      radius="lg"
-                      className="md:w-fit"
-                    >
-                      <div className="border-none relative w-full">
-                        <Image
-                          isZoomed
-                          className="w-full max-w-full"
-                          classNames={{
-                            wrapper: "!max-w-full",
-                          }}
-                          alt="Woman listing to music"
-                          src="https://nextui-docs-v2.vercel.app/images/album-cover.png"
-                        />
-                        <div className="absolute z-20 bottom-0 w-full p-4 space-y-1 bg-gradient-to-t from-black/80 to-transparent">
-                          <span>2022</span>
-                          <p className="font-bebas-neue text-4xl">
-                            DPM Poltekkes Semarang
-                          </p>
-                        </div>
+            <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-4">
+              {works.map((work) => {
+                return (
+                  <Card
+                    role="button"
+                    key={work.title}
+                    isHoverable
+                    isFooterBlurred
+                    radius="lg"
+                  >
+                    <div className="border-none relative w-full flex justify-center items-center">
+                      <Image
+                        isZoomed
+                        className="w-full max-w-full h-52"
+                        alt="Woman listing to music"
+                        src={work.image}
+                      />
+                      <div className="absolute z-20 bottom-0 w-full p-4 space-y-1 bg-gradient-to-t from-black/80 to-transparent">
+                        <span>{work.year}</span>
+                        <p className="font-bebas-neue text-4xl">{work.title}</p>
                       </div>
-                    </Card>
-                  ))}
-                </div>
-              </Tab>
-              <Tab key="music" title="Back End">
-                <div className="flex space-x-5">
-                  {Array.from({ length: 4 }).map((_, index) => (
-                    <Card
-                      role="button"
-                      key={index}
-                      isFooterBlurred
-                      isHoverable
-                      radius="lg"
-                      className="w-fit"
-                    >
-                      <div className="border-none w-fit relative">
-                        <Image
-                          isZoomed
-                          alt="Woman listing to music"
-                          src="https://nextui-docs-v2.vercel.app/images/album-cover.png"
-                        />
-                        <div className="absolute z-20 bottom-0 w-full p-4 space-y-1 bg-gradient-to-t from-black/80 to-transparent">
-                          <span>2022</span>
-                          <p className="font-bebas-neue text-4xl">
-                            DPM Poltekkes Semarang
-                          </p>
-                        </div>
-                      </div>
-                    </Card>
-                  ))}
-                </div>
-              </Tab>
-            </Tabs>
+                    </div>
+                  </Card>
+                );
+              })}
+            </div>
           </div>
         </div>
       </section>
@@ -390,12 +348,7 @@ export default function Home() {
                 title: "text-2xl md:text-4xl font-bebas-neue",
               }}
               indicator={<Button isIconOnly>+</Button>}
-              subtitle={
-                <span>
-                  The first gyocess is to urxiecstand brief that has been by
-                  Client via Ot Chat then the{" "}
-                </span>
-              }
+              subtitle={<span></span>}
               startContent={
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -424,12 +377,7 @@ export default function Home() {
                 title: "text-2xl md:text-4xl font-bebas-neue",
               }}
               indicator={<Button isIconOnly>+</Button>}
-              subtitle={
-                <span>
-                  The first gyocess is to urxiecstand brief that has been by
-                  Client via Ot Chat then the{" "}
-                </span>
-              }
+              subtitle={<span></span>}
               startContent={
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -458,12 +406,7 @@ export default function Home() {
                 title: "text-2xl md:text-4xl font-bebas-neue",
               }}
               indicator={<Button isIconOnly>+</Button>}
-              subtitle={
-                <span>
-                  The first gyocess is to urxiecstand brief that has been by
-                  Client via Ot Chat then the{" "}
-                </span>
-              }
+              subtitle={<span></span>}
               startContent={
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -492,12 +435,7 @@ export default function Home() {
                 title: "text-2xl md:text-4xl font-bebas-neue",
               }}
               indicator={<Button isIconOnly>+</Button>}
-              subtitle={
-                <span>
-                  The first gyocess is to urxiecstand brief that has been by
-                  Client via Ot Chat then the{" "}
-                </span>
-              }
+              subtitle={<span></span>}
               startContent={
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -526,12 +464,7 @@ export default function Home() {
                 title: "text-2xl md:text-4xl font-bebas-neue",
               }}
               indicator={<Button isIconOnly>+</Button>}
-              subtitle={
-                <span>
-                  The first gyocess is to urxiecstand brief that has been by
-                  Client via Ot Chat then the{" "}
-                </span>
-              }
+              subtitle={<span></span>}
               startContent={
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -560,12 +493,7 @@ export default function Home() {
                 title: "text-2xl md:text-4xl font-bebas-neue",
               }}
               indicator={<Button isIconOnly>+</Button>}
-              subtitle={
-                <span>
-                  The first gyocess is to urxiecstand brief that has been by
-                  Client via Ot Chat then the{" "}
-                </span>
-              }
+              subtitle={<span></span>}
               startContent={
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -594,7 +522,7 @@ export default function Home() {
             <div className="w-72 h-72 rounded-xl bg-[#6c57f1]/30 absolute top-0 right-0 -rotate-12 scale-125 z-0" />
           </Card>
         </div>
-        <div className="max-w-screen-xl mx-auto mt-20 space-y-10">
+        <div className="max-w-screen-xl mx-auto space-y-10 py-20">
           <div className="text-2xl font-righteous">
             <div className="max-w-3xl">OUR CLIENTS</div>
           </div>
