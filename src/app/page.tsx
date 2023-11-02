@@ -45,7 +45,7 @@ export default function Home() {
                   <span className="text-sm font-bebas-neue">YEARS</span>
                 </div>
                 <svg
-                  className="absolute"
+                  className="absolute spin-slow"
                   xmlns="http://www.w3.org/2000/svg"
                   width="150"
                   height="150"

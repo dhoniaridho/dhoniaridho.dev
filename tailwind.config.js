@@ -19,6 +19,9 @@ module.exports = {
         righteous: ["Righteous", "cursive"],
         "bebas-neue": ["Bebas Neue", "cursive"],
       },
+      animation: {
+        'spin-slow': 'spin 3s linear infinite',
+      }
     },
   },
   darkMode: "class",
