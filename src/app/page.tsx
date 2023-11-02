@@ -45,7 +45,7 @@ export default function Home() {
                   <span className="text-sm font-bebas-neue">YEARS</span>
                 </div>
                 <svg
-                  className="absolute spin-slow"
+                  className="absolute"
                   xmlns="http://www.w3.org/2000/svg"
                   width="150"
                   height="150"
@@ -92,7 +92,7 @@ export default function Home() {
           </div>
         </div>
         <svg
-          className="z-30 absolute right-20 top-28 hidden md:block"
+          className="z-30 absolute right-20 top-28 hidden md:block spin-slow"
           xmlns="http://www.w3.org/2000/svg"
           width="212"
           height="212"
